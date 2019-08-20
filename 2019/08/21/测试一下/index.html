@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="循环目标 程序的三大流程 while 循环基本使用 break 和 continue while 循环嵌套">
+<meta property="og:type" content="article">
+<meta property="og:title" content="测试一下">
+<meta property="og:url" content="http://yoursite.com/2019/08/21/测试一下/index.html">
+<meta property="og:site_name" content="听雨">
+<meta property="og:description" content="循环目标 程序的三大流程 while 循环基本使用 break 和 continue while 循环嵌套">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/08/21/测试一下/media/14966337488366/001_%E7%A8%8B%E5%BA%8F%E4%B8%89%E5%A4%A7%E6%B5%81%E7%A8%8B.png">
+<meta property="og:updated_time" content="2019-08-20T23:31:47.564Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="测试一下">
+<meta name="twitter:description" content="循环目标 程序的三大流程 while 循环基本使用 break 和 continue while 循环嵌套">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/21/测试一下/media/14966337488366/001_%E7%A8%8B%E5%BA%8F%E4%B8%89%E5%A4%A7%E6%B5%81%E7%A8%8B.png">
+  <link rel="canonical" href="http://yoursite.com/2019/08/21/测试一下/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>测试一下 | 听雨</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">听雨</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-rchives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>rchives</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/21/测试一下/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="墨不语">
+      <meta itemprop="description" content="“华风夏韵，洛水天依”">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="听雨">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">测试一下
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-21 07:26:50 / 修改时间：07:31:47" itemprop="dateCreated datePublished" datetime="2019-08-21T07:26:50+08:00">2019-08-21</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>程序的三大流程</li>
+<li>while 循环基本使用</li>
+<li>break 和 continue</li>
+<li>while 循环嵌套</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="01-程序的三大流程"><a href="#01-程序的三大流程" class="headerlink" title="01. 程序的三大流程"></a>01. 程序的三大流程</h2><ul>
+<li><p>在程序开发中，一共有三种流程方式：</p>
+<ul>
+<li><p><strong>顺序</strong> —— <strong>从上向下</strong>，顺序执行代码</p>
+<ul>
+<li><p><strong>分支</strong> —— 根据条件判断，决定执行代码的 <strong>分支</strong></p>
+</li>
+<li><p><strong>循环</strong> —— 让 <strong>特定代码 重复</strong> 执行</p>
+<p>  <img src="media/14966337488366/001_%E7%A8%8B%E5%BA%8F%E4%B8%89%E5%A4%A7%E6%B5%81%E7%A8%8B.png" alt="001_程序三大流程"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>## 02. `while` 循环基本使用
+
+* 循环的作用就是让 **指定的代码** 重复的执行
+* `while` 循环最常用的应用场景就是 **让执行的代码** 按照 **指定的次数** **重复** 执行
+
+* 需求 —— 打印 5 遍 `Hello Python`
+* 思考 —— 如果要求打印 100 遍怎么办？
+
+### 2.1 `while` 语句基本语法
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">初始条件设置 —— 通常是重复执行的 计数器</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> 条件(判断 计数器 是否达到 目标次数):</span><br><span class="line">    条件满足时，做的事情<span class="number">1</span></span><br><span class="line">        条件满足时，做的事情<span class="number">2</span></span><br><span class="line">	    条件满足时，做的事情<span class="number">3</span></span><br><span class="line">	        ...(省略)...</span><br><span class="line">		    </span><br><span class="line">		        处理条件(计数器 + <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+            **注意**：
+
+            * `while` 语句以及缩进部分是一个 **完整的代码块**
+
+            #### 第一个 while 循环
+
+            **需求**
+
+            * 打印 5 遍 Hello Python
+
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 1. 定义重复次数计数器</span><br><span class="line">i = 1</span><br><span class="line"></span><br><span class="line"># 2. 使用 while 判断条件</span><br><span class="line">while i &lt;= 5:</span><br><span class="line">    # 要重复执行的代码</span><br><span class="line">        print(&quot;Hello Python&quot;)</span><br><span class="line"></span><br><span class="line">	    # 处理计数器 i</span><br><span class="line">	        i = i + 1</span><br><span class="line"></span><br><span class="line">		print(&quot;循环结束后的 i = %d&quot; % i)</span><br></pre></td></tr></table></figure>
+
+                    &gt; 注意：循环结束后，之前定义的计数器条件的数值是依旧存在的
+
+                    #### 死循环
+
+                    &gt; 由于程序员的原因，**忘记** 在循环内部 **修改循环的判断条件**，导致循环持续执行，程序无法终止！
+
+                    ### 2.2 赋值运算符
+
+                    * 在 Python 中，使用 `=` 可以给变量赋值
+                    * 在算术运算时，为了简化代码的编写，`Python` 还提供了一系列的 与 **算术运算符** 对应的 **赋值运算符**
+                    * 注意：**赋值运算符中间不能使用空格**
+
+                    | 运算符 | 描述 | 实例 |
+                    | --- | --- | --- |
+                    | = | 简单的赋值运算符 | c = a + b 将 a + b 的运算结果赋值为 c |
+                    | += | 加法赋值运算符 | c += a 等效于 c = c + a |
+                    | -= | 减法赋值运算符 | c -= a 等效于 c = c - a |
+                    | *= | 乘法赋值运算符     | c *= a 等效于 c = c * a |
+                    | /= | 除法赋值运算符 | c /= a 等效于 c = c / a |
+                    | //= | 取整除赋值运算符 | c //= a 等效于 c = c // a |
+                    | %= | 取 **模** (余数)赋值运算符 | c %= a 等效于 c = c % a |
+                    | **= | 幂赋值运算符 | c **= a 等效于 c = c ** a |
+
+                    ### 2.3 Python 中的计数方法
+
+                    常见的计数方法有两种，可以分别称为：
+
+                    * **自然计数法**（从 `1` 开始）—— 更符合人类的习惯
+                    * **程序计数法**（从 `0` 开始）—— 几乎所有的程序语言都选择从 0 开始计数
+
+                    因此，大家在编写程序时，应该尽量养成习惯：**除非需求的特殊要求，否则 循环 的计数都从 0 开始**
+
+                    ### 2.4 循环计算
+
+                    &gt; 在程序开发中，通常会遇到 **利用循环** **重复计算** 的需求
+
+                    遇到这种需求，可以：
+
+                    1. 在 `while` 上方定义一个变量，用于 **存放最终计算结果**
+                    2. 在循环体内部，每次循环都用 **最新的计算结果**，**更新** 之前定义的变量
+
+                    **需求**
+
+                    * 计算 0 ~ 100 之间所有数字的累计求和结果
+
+                    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算 0 ~ 100 之间所有数字的累计求和结果</span></span><br><span class="line"><span class="comment"># 0. 定义最终结果的变量</span></span><br><span class="line">result = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 定义一个整数的变量记录循环的次数</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 开始循环</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= <span class="number">100</span>:</span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 每一次循环，都让 result 这个变量和 i 这个计数器相加</span></span><br><span class="line">	    result += i</span><br><span class="line"></span><br><span class="line">	        <span class="comment"># 处理计数器</span></span><br><span class="line">		    i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">		    print(<span class="string">"0~100之间的数字求和结果 = %d"</span> % result)</span><br></pre></td></tr></table></figure>
+
+                                #### 需求进阶
+
+                                * 计算 0 ~ 100 之间 所有 **偶数** 的累计求和结果
+
+                                开发步骤
+
+                                1. 编写循环 **确认** **要计算的数字**
+                                2. 添加 **结果** 变量，在循环内部 **处理计算结果**
+
+                                <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0. 最终结果</span></span><br><span class="line">result = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 计数器</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 开始循环</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= <span class="number">100</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 判断偶数</span></span><br><span class="line"> <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">         print(i)</span><br><span class="line">          result += i</span><br><span class="line"></span><br><span class="line">       <span class="comment"># 处理计数器</span></span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">"0~100之间偶数求和结果 = %d"</span> % result)</span><br></pre></td></tr></table></figure>
+
+                                                ## 03. break 和 continue
+
+                                                &gt; `break` 和 `continue` 是专门在循环中使用的关键字
+
+                                                * `break` **某一条件满足时**，退出循环，不再执行后续重复的代码
+                                                * `continue` **某一条件满足时**，不执行后续重复的代码
+
+                                                &gt; `break` 和 `continue` 只针对 **当前所在循环** 有效
+
+                                                ![002_循环流程图-w400](media/14966337488366/002_%E5%BE%AA%E7%8E%AF%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
+
+
+                                                ### 3.1 break
+
+                                                * **在循环过程中**，如果 **某一个条件满足后**，**不** 再希望 **循环继续执行**，可以使用 `break` 退出循环
+
+                                                <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> i &lt; <span class="number">10</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># break 某一条件满足时，退出循环，不再执行后续重复的代码</span></span><br><span class="line"> <span class="comment"># i == 3</span></span><br><span class="line">     <span class="keyword">if</span> i == <span class="number">3</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">   print(i)</span><br><span class="line"></span><br><span class="line">       i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"over"</span>)</span><br></pre></td></tr></table></figure>
+
+                                                            &gt; `break` 只针对当前所在循环有效
+
+                                                            ### 3.2 continue
+
+                                                            * **在循环过程中**，如果 **某一个条件满足后**，**不** 希望 **执行循环代码，但是又不希望退出循环**，可以使用 `continue`
+                                                            * 也就是：在整个循环中，**只有某些条件**，不需要执行循环代码，而其他条件都需要执行
+
+                                                            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> i &lt; <span class="number">10</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 当 i == 7 时，不希望执行需要重复执行的代码</span></span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">7</span>:</span><br><span class="line">	        <span class="comment"># 在使用 continue 之前，同样应该修改计数器</span></span><br><span class="line">		        <span class="comment"># 否则会出现死循环</span></span><br><span class="line">			        i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">				        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">					    <span class="comment"># 重复执行的代码</span></span><br><span class="line">					        print(i)</span><br><span class="line"></span><br><span class="line">						    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+                                                                                        * 需要注意：使用 `continue` 时，**条件处理部分的代码，需要特别注意**，不小心会出现 **死循环**
+
+                                                                                        &gt; `continue` 只针对当前所在循环有效
+
+                                                                                        ## 04. `while` 循环嵌套
+
+                                                                                        ### 4.1 循环嵌套
+
+                                                                                        * `while` 嵌套就是：`while` 里面还有 `while`
+
+                                                                                        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> 条件 <span class="number">1</span>:</span><br><span class="line">    条件满足时，做的事情<span class="number">1</span></span><br><span class="line"> 条件满足时，做的事情<span class="number">2</span></span><br><span class="line">     条件满足时，做的事情<span class="number">3</span></span><br><span class="line">  ...(省略)...</span><br><span class="line">      </span><br><span class="line">   <span class="keyword">while</span> 条件 <span class="number">2</span>:</span><br><span class="line">           条件满足时，做的事情<span class="number">1</span></span><br><span class="line">            条件满足时，做的事情<span class="number">2</span></span><br><span class="line">	            条件满足时，做的事情<span class="number">3</span></span><br><span class="line">		            ...(省略)...</span><br><span class="line">			        </span><br><span class="line">				        处理条件 <span class="number">2</span></span><br><span class="line">					    </span><br><span class="line">					        处理条件 <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+                                                                                                                            ### 4.2 循环嵌套演练 —— 九九乘法表
+
+                                                                                                                            #### 第 1 步：用嵌套打印小星星
+
+                                                                                                                            **需求**
+
+                                                                                                                            * 在控制台连续输出五行 `*`，每一行星号的数量依次递增
+
+                                                                                                                            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*</span><br><span class="line">**</span><br><span class="line">***</span><br><span class="line">****</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
+
+                                                                                                                            * 使用字符串 * 打印
+
+                                                                                                                            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 定义一个计数器变量，从数字1开始，循环会比较方便</span></span><br><span class="line">row = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> row &lt;= <span class="number">5</span>:</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"*"</span> * row)</span><br><span class="line"></span><br><span class="line">        row += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+                                                                                                                                #### 第 2 步：使用循环嵌套打印小星星
+
+                                                                                                                                **知识点** 对 `print` 函数的使用做一个增强
+
+                                                                                                                                * 在默认情况下，`print` 函数输出内容之后，会自动在内容末尾增加换行
+                                                                                                                                * 如果不希望末尾增加换行，可以在 `print` 函数输出内容的后面增加 `, end=&quot;&quot;`
+                                                                                                                                * 其中 `&quot;&quot;` 中间可以指定 `print` 函数输出内容之后，继续希望显示的内容
+
+                                                                                                                                * 语法格式如下：
+
+                                                                                                                                <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 向控制台输出内容结束之后，不会换行</span></span><br><span class="line">print(<span class="string">"*"</span>, end=<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 单纯的换行</span></span><br><span class="line">print(<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
+
+                                                                                                                                &gt; `end=&quot;&quot;` 表示向控制台输出内容结束之后，不会换行
+
+                                                                                                                                **假设** `Python` **没有提供** 字符串的 `*` 操作 **拼接字符串**
+
+                                                                                                                                **需求**
+
+                                                                                                                                * 在控制台连续输出五行 `*`，每一行星号的数量依次递增
+
+                                                                                                                                <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*</span><br><span class="line">**</span><br><span class="line">***</span><br><span class="line">****</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
+
+                                                                                                                                **开发步骤**
+
+                                                                                                                                * 1&gt; 完成 5 行内容的简单输出
+                                                                                                                                * 2&gt; 分析每行内部的 `*` 应该如何处理？
+                                                                                                                                    * 每行显示的星星和当前所在的行数是一致的
+                                                                                                                                        * 嵌套一个小的循环，专门处理每一行中 `列` 的星星显示  
+
+                                                                                                                                    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">row = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> row &lt;= <span class="number">5</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 假设 python 没有提供字符串 * 操作</span></span><br><span class="line">        <span class="comment"># 在循环内部，再增加一个循环，实现每一行的 星星 打印</span></span><br><span class="line">	    col = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">	        <span class="keyword">while</span> col &lt;= row:</span><br><span class="line">		        print(<span class="string">"*"</span>, end=<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">			        col += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">				    <span class="comment"># 每一行星号输出完成后，再增加一个换行</span></span><br><span class="line">				        print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">					    row += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+                                                                                                                                                            #### 第 3 步： 九九乘法表
+
+                                                                                                                                                            **需求** 输出 九九乘法表，格式如下：
+
+                                                                                                                                                            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 * 1 = 1	</span><br><span class="line">1 * 2 = 2	2 * 2 = 4	</span><br><span class="line">1 * 3 = 3	2 * 3 = 6	3 * 3 = 9	</span><br><span class="line">1 * 4 = 4	2 * 4 = 8	3 * 4 = 12	4 * 4 = 16	</span><br><span class="line">1 * 5 = 5	2 * 5 = 10	3 * 5 = 15	4 * 5 = 20	5 * 5 = 25	</span><br><span class="line">1 * 6 = 6	2 * 6 = 12	3 * 6 = 18	4 * 6 = 24	5 * 6 = 30	6 * 6 = 36	</span><br><span class="line">1 * 7 = 7	2 * 7 = 14	3 * 7 = 21	4 * 7 = 28	5 * 7 = 35	6 * 7 = 42	7 * 7 = 49	</span><br><span class="line">1 * 8 = 8	2 * 8 = 16	3 * 8 = 24	4 * 8 = 32	5 * 8 = 40	6 * 8 = 48	7 * 8 = 56	8 * 8 = 64	</span><br><span class="line">1 * 9 = 9	2 * 9 = 18	3 * 9 = 27	4 * 9 = 36	5 * 9 = 45	6 * 9 = 54	7 * 9 = 63	8 * 9 = 72	9 * 9 = 81</span><br></pre></td></tr></table></figure>
+
+                                                                                                                                                            **开发步骤**
+
+                                                                                                                                                            * 1. 打印 9 行小星星
+
+                                                                                                                                                            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">*</span><br><span class="line">**</span><br><span class="line">***</span><br><span class="line">****</span><br><span class="line">*****</span><br><span class="line">******</span><br><span class="line">*******</span><br><span class="line">********</span><br><span class="line">*********</span><br></pre></td></tr></table></figure>
+
+                                                                                                                                                            * 2. 将每一个 `*` 替换成对应的行与列相乘
+
+                                                                                                                                                            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义起始行</span></span><br><span class="line">row = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 最大打印 9 行</span></span><br><span class="line"><span class="keyword">while</span> row &lt;= <span class="number">9</span>:</span><br><span class="line">    <span class="comment"># 定义起始列</span></span><br><span class="line"> col = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">     <span class="comment"># 最大打印 row 列</span></span><br><span class="line">  <span class="keyword">while</span> col &lt;= row:</span><br><span class="line"></span><br><span class="line">          <span class="comment"># end = ""，表示输出结束后，不换行</span></span><br><span class="line">           <span class="comment"># "\t" 可以在控制台输出一个制表符，协助在输出文本时对齐</span></span><br><span class="line">            print(<span class="string">"%d * %d = %d"</span> % (col, row, row * col), end=<span class="string">"\t"</span>)</span><br><span class="line"></span><br><span class="line">	            <span class="comment"># 列数 + 1</span></span><br><span class="line">		            col += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">			        <span class="comment"># 一行打印完成的换行</span></span><br><span class="line">				    print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">				        <span class="comment"># 行数 + 1</span></span><br><span class="line">					    row += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+                                                                                                                                                                                                **字符串中的转义字符**
+
+                                                                                                                                                                                                * `\t` 在控制台输出一个 **制表符**，协助在输出文本时 **垂直方向** 保持对齐
+                                                                                                                                                                                                * `\n` 在控制台输出一个 **换行符**
+
+                                                                                                                                                                                                &gt; **制表符** 的功能是在不使用表格的情况下在 **垂直方向** 按列对齐文本
+
+                                                                                                                                                                                                | 转义字符 | 描述 |
+                                                                                                                                                                                                | --- | --- |
+                                                                                                                                                                                                | \\\\ | 反斜杠符号 |
+                                                                                                                                                                                                | \\&apos; | 单引号 |
+                                                                                                                                                                                                | \\&quot; | 双引号 |
+                                                                                                                                                                                                | \n | 换行 |
+                                                                                                                                                                                                | \t | 横向制表符 |
+                                                                                                                                                                                                | \r | 回车 |</code></pre>
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">墨不语</p>
+  <div class="site-description motion-element" itemprop="description">“华风夏韵，洛水天依”</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#循环"><span class="nav-number">1.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">1.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#01-程序的三大流程"><span class="nav-number">1.2.</span> <span class="nav-text">01. 程序的三大流程</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">墨不语</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        <span>0%</span>
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>
